@@ -8,7 +8,9 @@ EchoBot, bir sohbet kutusu/widget içinde ona söylediğiniz her şeyi tekrarlay
 # Projeyi çalıştırmak için
 
 Projeyi çalıştırmak için npm run start komutunu çalıştırın.
+
 Demoya : https://echobot-with-react-and-tailwind.netlify.app/
+
 Github Profilimi incelemek için : https://github.com/burakceylanz/
 
 # Proje içi görseller
