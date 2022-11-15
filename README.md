@@ -13,6 +13,6 @@ Github Profilimi incelemek için : https://github.com/burakceylanz/
 
 # Proje içi görseller
 
-![Alt text](../../../../../../c:/Users/the10/Desktop/echobot-1.png)
+![echobot-1](https://user-images.githubusercontent.com/91959780/202043603-dc56568e-2c20-4f7c-96f5-1989265c7800.png)
 
-![Alt text](../../../../../../c:/Users/the10/Desktop/echobot-2.png)
+![echobot-2](https://user-images.githubusercontent.com/91959780/202043616-60b52dd4-9dfa-4dd4-8e6d-24095f62ca5e.png)
