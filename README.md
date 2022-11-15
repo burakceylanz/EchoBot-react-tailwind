@@ -2,8 +2,9 @@
 
 EchoBot, bir sohbet kutusu/widget içinde ona söylediğiniz her şeyi tekrarlayan küçük bir sohbet robotudur. React ve Tailwind CSS ile yazılmıştır. - Kullanıcının EchoBot'a mesaj göndermesine izin verecek bir sohbet widget'ı oluşturuldu. 
 - Kullanıcıların ifadelerini girmeleri için bir metin giriş alanı oluşturuldu.
-- Kullanıcıların ifadeyi EchoBot'a göndermesine izin veren bir gönder düğmesi oluşturuldu.
+- Kullanıcıların ifadeyi EchoBot'a göndermesine izin veren bir gönder butonu oluşturuldu.
 - Hem kullanıcıdan hem de EchoBot'tan _historical_ mesajları yazdıran bir mesaj listesi oluşturuldu.
+- Mesajın dumuna göre gönder butonunun onChange işlemi ile aksiyon alması tetiklendi.
 
 # Projeyi çalıştırmak için
 
