@@ -9,6 +9,7 @@ EchoBot, bir sohbet kutusu/widget içinde ona söylediğiniz her şeyi tekrarlay
 
 - Hem kullanıcıdan hem de Echobot'tan gelen mesajların _historical_ özelliği düzeltildi.
 -  _historical_ özelliği sadece saati ve dakikayı gösterecek şekilde düzenlendi.
+- Kod satırları iyileştirildi.
 
 # Projeyi çalıştırmak için
 
