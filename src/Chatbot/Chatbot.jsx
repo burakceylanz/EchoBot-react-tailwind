@@ -9,102 +9,92 @@ export default function Chatbot() {
         setEchobot(!echobot)
     }
     const date = new Date();
-    const hours = date.getHours();
-    const seconds = date.getSeconds();
-    const minute = date.getMinutes();
-    const day = date.getDay();
-    const month = date.getMonth();
-    const year = date.getFullYear();
-
-    const days = ['Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi', 'Pazar']
-    const months = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık']
-
-    const [time, setTime] = useState(padTo2Digits(hours) + ':' + padTo2Digits(minute));
-    const [dateTime, setDateTime] = useState(`${days[day]},${months[month]},${year}`);
-
     //if the date is single digit we add  0
     function padTo2Digits(num) {
         return String(num).padStart(2, '0');
     }
-      
+
     const newMessage = document.querySelector("#newMessage");
     const sendBtn = document.getElementById("send-btn");
 
     const handleChange = (event) => {
-        if(newMessage.value ===''){
+        if (newMessage.value === '') {
             sendBtn.style.display = "none";
             return false;
-        }else{
+        } else {
             sendBtn.style.display = "block";
             return true;
         }
     }
 
     const handlekeyDown = (event) => {
-        if(event.key === "Enter"){
-          event.preventDefault();
-          sendBtn.click();
-          return true;
+        if (event.key === "Enter") {
+            event.preventDefault();
+            sendBtn.click();
+            return true;
         }
-        };
-  
-        useEffect(()=>{
-          window.addEventListener('keydown', handlekeyDown);
-          // clear addeventlistener
-          return () => {
+    };
+
+    useEffect(() => {
+        window.addEventListener('keydown', handlekeyDown);
+        // clear addeventlistener
+        return () => {
             window.removeEventListener('keydown', handlekeyDown);
-          };
-        },[handlekeyDown])
-        
+        };
+    }, [handlekeyDown])
+
     const handleInput = () => {
-        if(newMessage.value===''){
+        if (newMessage.value === '') {
             return false;
-        }else{
-        // new user message
-        const newUserMessage = document.createElement("div");
-        newUserMessage.className = "text-right mr-8";
-        document.querySelector("#messageList").appendChild(newUserMessage);
-        const newUserMessageContent = document.createElement("div");
-        newUserMessageContent.className="p-3 text-left rounded-2 max-w-[70%] inline-block bg-[#4652e7] my-4 text-[14px] text-white usermsg";
-        newUserMessage.appendChild(newUserMessageContent);
-        newUserMessageContent.innerHTML = newMessage.value;
-    
-        // the date the message was sent for user
-        const dateFieldUser = document.createElement("span");
-        dateFieldUser.className = "text-[10px] text-[#a8a8a8] block";
-        newUserMessageContent.appendChild(dateFieldUser);
-        dateFieldUser.innerHTML = time +" "+ dateTime;
-       
-        //new bot message
-        const newBotMessage = document.createElement("div");
-        newBotMessage.className = "text-left ml-8";
-        document.querySelector("#messageList").appendChild(newBotMessage);
-        const newBotMessageContent = document.createElement("div");
-        newBotMessageContent.className="p-3 text-left rounded-2 max-w-[70%] inline-block bg-[#F4F7F9] my-4 text-[14px] text-black botmsg";
-        newBotMessage.appendChild(newBotMessageContent);
-        newBotMessageContent.innerHTML = newMessage.value;
+        } else {
+            // new user message
+            const newUserMessage = document.createElement("div");
+            newUserMessage.className = "text-right mr-8";
+            document.querySelector("#messageList").appendChild(newUserMessage);
+            const newUserMessageContent = document.createElement("div");
+            newUserMessageContent.className = "p-3 text-left rounded-2 max-w-[70%] inline-block bg-[#4652e7] my-4 text-[14px] text-white usermsg";
+            newUserMessage.appendChild(newUserMessageContent);
+            newUserMessageContent.innerHTML = newMessage.value;
 
-        // the date the message was sent for bot
-        const dateFieldBot = document.createElement("span");
-        dateFieldBot.className = "text-[10px] text-[#a8a8a8] block";
-        newBotMessageContent.appendChild(dateFieldBot);
-        dateFieldBot.innerHTML = time +" "+ dateTime;
+            // the date the message was sent for user
+            const dateFieldUser = document.createElement("span");
+            dateFieldUser.className = "text-[10px] text-[#a8a8a8] block";
+            newUserMessageContent.appendChild(dateFieldUser);
+            dateFieldUser.innerHTML = padTo2Digits(new Date().getHours()) + ':' + padTo2Digits(new Date().getMinutes())
 
-        // scroll to last message
-        const scrollLastMessage = document.getElementById("messageList");
-        scrollLastMessage.scrollTop = scrollLastMessage.scrollHeight;
+            //new bot message
+            const newBotMessage = document.createElement("div");
+            newBotMessage.className = "text-left ml-8";
+            document.querySelector("#messageList").appendChild(newBotMessage);
+            const newBotMessageContent = document.createElement("div");
+            newBotMessageContent.className = "p-3 text-left rounded-2 max-w-[70%] inline-block bg-[#F4F7F9] my-4 text-[14px] text-black botmsg";
+            newBotMessage.appendChild(newBotMessageContent);
+            newBotMessageContent.innerHTML = newMessage.value;
 
-        // delete message when no message and remove button
-        newMessage.value = '';
-        sendBtn.style.display = "none";
+            // the date the message was sent for bot
+            const dateFieldBot = document.createElement("span");
+            dateFieldBot.className = "text-[10px] text-[#a8a8a8] block";
+            newBotMessageContent.appendChild(dateFieldBot);
+            dateFieldBot.innerHTML = padTo2Digits(new Date().getHours()) + ':' + padTo2Digits(new Date().getMinutes())
+
+            // scroll to last message
+            const scrollLastMessage = document.getElementById("messageList");
+            scrollLastMessage.scrollTop = scrollLastMessage.scrollHeight;
+
+            // delete message when no message and remove button
+            newMessage.value = '';
+            sendBtn.style.display = "none";
         }
+
     }
+
+
     return (
         <>
             <div className='text-center'>
                 <div className='h-screen bg-[#282c34] flex justify-center items-center'>
                     <div className='block hero-section'>
-                        <h1 className='text-center text-white text-[48px]'>Welcome to EchoBot!</h1>
+                        <h1 className='text-center text-white text-[48px]'>Welcome to EchoBot V0.1!</h1>
                         <span className='text-xs text-gray-300'>You say it, it will repeat!</span>
                     </div>
                 </div>
@@ -144,5 +134,5 @@ export default function Chatbot() {
                 </div>
             </div>
         </>
-    ) 
-    }
+    )
+}
