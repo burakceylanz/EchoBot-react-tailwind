@@ -1,25 +1,25 @@
 # EchoBot
 
-EchoBot, bir sohbet kutusu/widget içinde ona söylediğiniz her şeyi tekrarlayan küçük bir sohbet robotudur. React ve Tailwind CSS ile yazılmıştır. - Kullanıcının EchoBot'a mesaj göndermesine izin verecek bir sohbet widget'ı oluşturuldu. 
-- Kullanıcıların ifadelerini girmeleri için bir metin giriş alanı oluşturuldu.
-- Kullanıcıların ifadeyi EchoBot'a göndermesine izin veren bir gönder düğmesi oluşturuldu.
-- Hem kullanıcıdan hem de EchoBot'tan _historical_ mesajları yazdıran bir mesaj listesi oluşturuldu.
+EchoBot is a small chatbot that repeats everything you say to it in a chatbox/widget. Written in React and Tailwind CSS. - Created a chat widget to allow the user to send messages to EchoBot.
+- Includes a text input field for users to stay alive.
+- Includes a send button that allows users to send statements to EchoBot.
+- Added a message list that prints _historical_ messages from both the user and EchoBot.
 
-# V0.1 ile gelen güncellemeler
+# Updates in v0.1
 
-- Hem kullanıcıdan hem de Echobot'tan gelen mesajların _historical_ özelliği düzeltildi.
--  _historical_ özelliği sadece saati ve dakikayı gösterecek şekilde düzenlendi.
-- Kod satırları iyileştirildi.
+- Fixed the _historical_ attribute of messages from both the user and Echobot.
+- Fixed the way the _historical_ attribute only plays the hour and minute.
+- Improved code lines.
 
-# Projeyi çalıştırmak için
+# To run the project
 
-Projeyi çalıştırmak için npm run start komutunu çalıştırın.
+To run the project, run npm run start.
 
-Demoya : https://echobot-w-react-tailwind.netlify.app/
+Demo: https://echobot-w-react-tailwind.netlify.app/
 
-Github Profilimi incelemek için : https://github.com/burakceylanz/
+To view my Github Profile: https://github.com/burakceylanz/
 
-# Proje içi görseller
+# Project images
 
 ![echobot-1](https://user-images.githubusercontent.com/91959780/202043603-dc56568e-2c20-4f7c-96f5-1989265c7800.png)
 
